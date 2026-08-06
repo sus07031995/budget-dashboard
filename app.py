@@ -4,6 +4,10 @@ import pyodbc
 
 st.title("Budget Dashboard")
 
+DB_SERVER="your-server"
+DB_NAME="catering_db"
+DB_USER="cateringdev-user"
+DB_PASSWORD="your-password"
 
 
 query = """
