@@ -1,17 +1,15 @@
 import streamlit as st
 import pandas as pd
-import pyodbc
+import pymssql
 import os
 
 st.title("Budget Dashboard")
 
-conn = pyodbc.connect(
-    f"DRIVER={{ODBC Driver 18 for SQL Server}};"
-    f"SERVER={os.getenv('DB_SERVER')};"
-    f"DATABASE={os.getenv('DB_NAME')};"
-    f"UID={os.getenv('DB_USER')};"
-    f"PWD={os.getenv('DB_PASSWORD')};"
-    "TrustServerCertificate=yes;"
+conn = pymssql.connect(
+    server=os.getenv("DB_SERVER").split(",")[0],
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
 )
 
 query = """
