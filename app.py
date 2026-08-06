@@ -4,14 +4,7 @@ import pyodbc
 
 st.title("Budget Dashboard")
 
-conn = pyodbc.connect(
-    "DRIVER={ODBC Driver 18 for SQL Server};"
-    "SERVER=odinternal.cgjacecjgzwt.ap-southeast-1.rds.amazonaws.com,1433;"
-    "DATABASE=catering_db;"
-    "UID=cateringdev-user;"
-    "PWD=uh4IMbR8O5ykP2HQAufM;"
-    "TrustServerCertificate=yes;"
-)
+
 
 query = """
 SELECT
