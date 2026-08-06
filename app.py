@@ -4,8 +4,14 @@ import pyodbc
 
 st.title("Budget Dashboard")
 
-
-
+conn = pyodbc.connect(
+    f"DRIVER={{ODBC Driver 18 for SQL Server}};"
+    f"SERVER={st.secrets['DB_SERVER']};"
+    f"DATABASE={st.secrets['DB_NAME']};"
+    f"UID={st.secrets['DB_USER']};"
+    f"PWD={st.secrets['DB_PASSWORD']};"
+    "TrustServerCertificate=yes;"
+)
 
 query = """
 SELECT
